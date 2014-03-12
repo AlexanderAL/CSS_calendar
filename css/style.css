@@ -1,5 +1,5 @@
-/*  2014-03-01  {_V01} calendar.html */
-/*  фигня решение, хоть и рабочее  */
+/*  2014-03-11  {_V02} calendar.html */
+/*  решение рабочее, но таблица стандартная, что не есть гуд */
 
 /*  контейнер для календаря  */
 table {
@@ -23,8 +23,8 @@ td {
 	vertical-align: middle;
 }
 
-/*  выделение каждой ячейки с 3-й по 7-ю строки 3 и каждой ячейки с 1-й по 4-ю строки 5  */
-tr:nth-child(3) td:nth-child(3), tr:nth-child(3) td:nth-child(4), tr:nth-child(3) td:nth-child(5), tr:nth-child(3) td:nth-child(6), tr:nth-child(3) td:nth-child(7), tr:nth-child(5) td:nth-child(1), tr:nth-child(5) td:nth-child(2), tr:nth-child(5) td:nth-child(3), tr:nth-child(5) td:nth-child(4) {
+/*  выделение в строке 3 от 3-ей ячейки до конца  */
+tr:nth-child(3) td:nth-child(1n+3) {
 	background-color: #fea480;
 }
 
@@ -32,3 +32,8 @@ tr:nth-child(3) td:nth-child(3), tr:nth-child(3) td:nth-child(4), tr:nth-child(3
 tr:nth-child(4) {
 	background-color: #fea480;
 	}
+
+/*  выделение в строке 5 от 4-й ячейки с конца до начала  */
+tr:nth-child(5) td:nth-last-child(1n+4) {
+		background-color: #fea480;
+}
