@@ -1,11 +1,8 @@
- /*  2014-03-20  { Solution_v03. }    calendar.html  */
- /*  TODO: найти способ убрать расстояние после clear: both;  */
- /*  + Хочется найти другой способ задать сетку.
-	 Текущее решение: граница у всех дочерних <span> + фиксирование размера всех символов в таблице 1.1em + &nbsp; в пустых ячейках + подбор ширины родительского контейнера 16.9em  */
+ /*  2014-03-20  { _v04. }    calendar.html  */
+ /*  FIXED: убрал расстояние после clear: both; через margin-left:0.3em; в span:after и это решило вопрос с сеткой  (не нужны: фиксирование размера всех символов в таблице 1.1em + подбор ширины родительского контейнера 16.9em ) */
 
 /*  контейнер для календаря  */
 .calendar {
-	width: 16.9em;
 	margin: 3em auto;
 	display: table;
 	background-color: #fff;
@@ -21,7 +18,6 @@
     float: left;
     text-align: right;
 	font-family: Helvetica, Arial;
-	font-size: 1.1em;
 	border: 1px solid #999;
 	color: #333;
 	/*  скругленные ячейки, не принципиально, просто бантик =) */
@@ -39,6 +35,7 @@
 	position: relative;
 	display: block;
     margin-top: -1.30em;
+    margin-left: 0.3em;
     opacity: 0;
 }
 
