@@ -1,0 +1,199 @@
+.solution {
+	margin: 3em auto;
+	padding: 1em;
+	display: table;
+	background-color: #EAEAEA;
+	font-family: Helvetica, Arial;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	-moz-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+}
+
+.sol_expl {
+	margin: 3em auto;
+	padding: 1em;
+	display: table;
+	background-color: #D0D0D0;
+	font-family: Helvetica, Arial;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	-moz-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+}
+
+
+
+/*Решение 4*/
+ /*  2014-03-20  { _v04. }    calendar.html  */
+ /*  FIXED: убрал расстояние после clear: both; через margin-left:0.3em; в span:after и это решило вопрос с сеткой  (не нужны: фиксирование размера всех символов в таблице 1.1em + подбор ширины родительского контейнера 16.9em ) */
+
+/*  контейнер для календаря  */
+.calendar4 {
+	margin: 3em auto;
+	display: table;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 3px 4px #ccc;
+	-moz-box-shadow: 0px 3px 4px #ccc;
+	box-shadow: 0px 3px 4px #ccc;
+}
+
+/*  ячейки календаря  */
+.calendar4 > span {
+	padding: 0.3em;
+	background-color: #ccc;
+    float: left;
+    text-align: right;
+	font-family: Helvetica, Arial;
+	border: 1px solid #999;
+	color: #333;
+	/*  скругленные ячейки, не принципиально, просто бантик =) */
+	border-radius: 10%;
+}
+
+/*  новая строка с каждого седьмого элемента  */
+.calendar4 > span:nth-child(7n+1) {
+    clear: both;
+}
+
+/*  равная ширина элемента  */
+.calendar4 > span:after {
+	content: "ПН";
+	position: relative;
+	display: block;
+    margin-top: -1.30em;
+    margin-left: 0.3em;
+    opacity: 0;
+}
+
+/*  цвет фона (белый как у страницы) от начала до 16-го элемента (7-е число), и от конца до 10-го (22-е число)  */
+.calendar4 > span:nth-of-type(-1n+16), .calendar4 > span:nth-last-of-type(-1n+10) {
+	background-color: #fff;
+}
+
+/* Решение 3 */
+ /*  2014-03-20  { Solution_v03. }    calendar.html  */
+ /*  TODO: найти способ убрать расстояние после clear: both;  */
+ /*  + Хочется найти другой способ задать сетку.
+	 Текущее решение: граница у всех дочерних <span> + фиксирование размера всех символов в таблице 1.1em + &nbsp; в пустых ячейках + подбор ширины родительского контейнера 16.9em  */
+
+/*  контейнер для календаря  */
+.calendar3 {
+	width: 16.9em;
+	margin: 3em auto;
+	display: table;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 3px 4px #ccc;
+	-moz-box-shadow: 0px 3px 4px #ccc;
+	box-shadow: 0px 3px 4px #ccc;
+}
+
+/*  ячейки календаря  */
+.calendar3 > span {
+	padding: 0.3em;
+	background-color: #ccc;
+    float: left;
+    text-align: right;
+	font-family: Helvetica, Arial;
+	font-size: 1.1em;
+	border: 1px solid #999;
+	color: #333;
+	/*  скругленные ячейки, не принципиально, просто бантик =) */
+	border-radius: 10%;
+}
+
+/*  новая строка с каждого седьмого элемента  */
+.calendar3 > span:nth-child(7n+1) {
+    clear: both;
+}
+
+/*  равная ширина элемента  */
+.calendar3 > span:after {
+	content: "ПН";
+	position: relative;
+	display: block;
+    margin-top: -1.30em;
+    opacity: 0;
+}
+
+/*  цвет фона (белый как у страницы) от начала до 16-го элемента (7-е число), и от конца до 10-го (22-е число)  */
+.calendar3 > span:nth-of-type(-1n+16), .calendar3 > span:nth-last-of-type(-1n+10) {
+	background-color: #fff;
+}
+
+/* Решение 2 */
+
+/*  2014-03-11  {_V02} calendar.html */
+/*  решение рабочее, но таблица стандартная, что не есть гуд */
+
+/*  контейнер для календаря  */
+table.sol2 {
+	width: 90%;
+	margin: 0 auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	border-collapse: collapse;
+}
+
+/*  ячейки календаря  */
+td.sol2 {
+	height: 50px;
+	padding: 0 20px;
+	border: 1px solid #cdcdcd;
+	text-align: center; 
+	vertical-align: middle;
+}
+
+/*  выделение в строке 3 от 3-ей ячейки до конца  */
+tr.sol2:nth-child(3) td.sol2:nth-child(1n+3) {
+	background-color: #fea480;
+}
+
+/*  выделение всей строки 4  */
+tr.sol2:nth-child(4) {
+	background-color: #fea480;
+	}
+
+/*  выделение в строке 5 от 4-й ячейки с конца до начала  */
+tr.sol2:nth-child(5) td:nth-last-child(1n+4) {
+		background-color: #fea480;
+}
+
+/* Решение 1 */
+
+/*  2014-03-01  {_V01} calendar.html */
+/*  фигня решение, хоть и рабочее  */
+
+/*  контейнер для календаря  */
+table.sol1 {
+	width: 90%;
+	margin: 0 auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
+	border-collapse: collapse;
+}
+
+/*  ячейки календаря  */
+td.sol1 {
+	height: 50px;
+	padding: 0 20px;
+	border: 1px solid #cdcdcd;
+	text-align: center; 
+	vertical-align: middle;
+}
+
+/*  выделение каждой ячейки с 3-й по 7-ю строки 3 и каждой ячейки с 1-й по 4-ю строки 5  */
+tr.sol1:nth-child(3) td.sol1:nth-child(3), tr.sol1:nth-child(3) td.sol1:nth-child(4), tr.sol1:nth-child(3) td.sol1:nth-child(5), tr.sol1:nth-child(3) td.sol1:nth-child(6), tr.sol1:nth-child(3) td.sol1:nth-child(7), tr.sol1:nth-child(5) td.sol1:nth-child(1), tr.sol1:nth-child(5) td.sol1:nth-child(2), tr.sol1:nth-child(5) td.sol1:nth-child(3), tr.sol1:nth-child(5) td.sol1:nth-child(4) {
+	background-color: #fea480;
+}
+
+/*  выделение всей строки 4  */
+tr.sol1:nth-child(4) {
+	background-color: #fea480;
+	}
